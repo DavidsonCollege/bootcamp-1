@@ -37,25 +37,65 @@ By the end of the bootcamp, students should have the skills and competencies to 
 * Download MongoDB Compass
 * Install Postman
 * Install Terminal or iTerm
-* Install Atom, Sublime, or other IDE
-* Install Firefox
+* Install Atom, VSCode, or other IDE
 
 ---
 
-## Day 1 Warmup
+# Day 1
 
-### Breakouts
+### Warmup
+*Review:* [Pre-bootcamp exercise](https://jsbin.com/lekihiyiqe/1/edit?js,console)
 
-* GitHub, Git, .gitignore
-* npm, yarn, and package management
-* require, import, exports
+### Terminal
+*Exercise:*
+1. Change to the Documents directory with `cd folder_name`
+2. List out all of the files in that folder with `ls`
+3. Create a new folder (`mkdir`) and `cd` to your new folder
+4. Create a new file (`touch`)
+6. Return to your home directory (~)
+7. `cd` to your newly created folder using only 1 command
+8. Delete the file you created in #4 (`rm`)
 
-### Javascript 101
+### Git & GitHub
+
+*Exercise:*
+Visit *[https://learngitbranching.js.org/](https://learngitbranching.js.org/)* and complete exercises 1, 2, and 3
+
+*Exercise:*
+1. Clone this GitHub repository
+2. Checkout a new branch called *your_name*
+3. Use your IDE to change title of readme to *{your name}’s Bootcamp Overview*
+4. Stage and commit your changes
+5. Push your branch up to the remote
+
+*Brainstorm:*
+Can you think of ways to organize your git repositories and branches in order to facilitate collaboration over the summer? (For instance: do you each have a branch under your name? or do you create a new branch for every new feature?)
+
+### Package/Dependency Management
+
+1. What is npm and how does it work?
+2. What are some examples of other package management tools?
+3. What's the purpose of package.json? package-lock.json?
+4. Why do you have a folder called node_modules? 
+
+*I would recommend trying to initialize npm in your cloned repository for practice*
+
+### More Javascript
 
 0. What is asynchronocity? Why is it important? https://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean
 
-Notice what happens with this code:
+Note the differences between the following two examples:
 
+**Synchronous**
+```javascript
+function getGoogle() {
+  console.log("A");
+  for (var i = 0; i < 5; i++){ console.log(i);}      
+  console.log("C");
+}
+```
+
+**Asynchronous**
 ```javascript
 function getGoogle() {
   console.log("A");
@@ -66,11 +106,12 @@ function getGoogle() {
 }
 ```
 
-1. What is a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)?
-1. What is Promise.all?
-1. What is a callback?
-1. What is an arrow function? What's different about arrow functions?
-1. What is going on here?
+1. What is a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)? (+ [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises))
+2. What is Promise.all?
+3. What is a callback?
+4. How does `this` work in javascript?
+5. What is an arrow function? What's different about arrow functions?
+6. What is going on here?
    Can you rewrite with function() instead of => ?
 
 ```javascript
@@ -78,25 +119,14 @@ let addFiveDigits = a => b => c => d => e => a + b + c + d + e;
 addFiveDigits(1)(1)(1)(1)(1);
 ```
 
-1. Whats the difference between `const`, `var`, `let`?
-1. What are object prototypes?
-1. What are higher order components (HOCs)?
+7. What are object prototypes?
+8. What are higher order components (HOCs)?
+
+*If you want more practice with promises, here is a good resource: https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/some-pratice*
+
+#### Node.js
+Take some time to read through this article and understand the concepts: [What is Node.js?](https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5) 
 
 ### Release 1 (on your own)
 
-0. Write a function that fetches the html from https://www.nytimes.com/ and then writes the return value (which should just be HTML) to the console.
-1. Write a function that fetches the HTML from five major news sources all at once, then concatenates the HTML from the sites into one long string. (Hint: Promise.all)
-1. Write a function that fetches the HTML from five major news sources all at once and returns the HTML of the webpage that loads first. (Hint: Promise.race)
-1. Write a function that fetches the HTML from five major news sources one after the other. Hint:
-
-```javascript
-fetch().then(() => {
-  fetch().then(() => {
-    fetch().then();
-  });
-});
-```
-
-1. For the previous three functions, use [console.time()](https://developer.mozilla.org/en-US/docs/Web/API/Console/time) to benchmark the speed of all three promises. What do you notice?
-1. Write a function that takes as arguments an arbitrary period of time (in milliseconds) and an arbitrary function that it executes after the specified period of time. (This is a callback.)
-1. Write a Promise that resolves after 4000 milliseconds.
+In your local branch of this repository, complete the exercises in the [asyncExamples.js](https://github.com/asalexanderlee/bootcamp-1/blob/master/asyncExamples.js) file. To run your javascript, `cd` into your repository in terminal and run `node filename.js` (you can also write javascript directly in your terminal by typing `node` to start a session and `.exit` to exit). When you're finished, please commit your changes and push up your branch to the origin. 
